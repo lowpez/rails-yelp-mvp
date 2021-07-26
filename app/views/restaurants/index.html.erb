@@ -1,0 +1,19 @@
+<div class="banner">
+  <div class="container">
+    <h1><strong>Tus Restaurantes favoritos!</strong>!</h1>
+    <%= link_to "Añade un nuevo restaurant!", new_restaurant_path, class:"btn btn-success m-3" %>
+  </div>
+
+</div>
+
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card d-flex ">
+      <div class="row align-items-center justify-content-center">
+        <h3><%= restaurant.name %> - <%= restaurant.category.capitalize %></h3>
+        <!--<h4><%= restaurant.reviews.all %></h4>-->
+        <h3><%= link_to "Ver detalles", restaurant_path(restaurant), class: "btn btn-primary m-3" %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>
